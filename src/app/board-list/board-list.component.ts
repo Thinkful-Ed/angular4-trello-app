@@ -24,13 +24,14 @@ export class BoardListComponent implements OnInit {
  submitForm = (boardForm) => {
    this.submitted = true;
    console.log("here is the board", boardForm)
-   let title = boardForm.value.title
-   this.boardService.addBoard({ title } as Board)
+   let new_board = new Board();
+   new_board.name = name;
+   this.boardService.addBoard(new_board as Board)
    .subscribe(board => {
-     this.board.push(board);
+     this.boards.push(board);
    });
  }
- 
+
   ngOnInit() {
     this.getBoards();
   }

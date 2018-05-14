@@ -1,6 +1,12 @@
 <h1>{{board.name}}</h1>
 
 <ul>
+  <li>
+      <form #listForm="ngForm" id="board-edit-form" (ngSubmit)="submitForm(boardForm)">
+      New List:<input [(ngModel)]="list.title" placeholder="title" name="title" #title="ngModel" required/>
+      <button type="submit" [disabled]="!listForm.form.valid">save</button>
+      </form>
+  </li>
   <li *ngFor="let list of lists">
     <app-list [list]="list"></app-list>
   </li>

@@ -14,7 +14,6 @@ export class ListComponent implements OnInit {
   @Input() list: List;
   lists: List[];
   cards: Card[];
-  console.log("it's a list", this.list);
 
 
   constructor(private listService: ListService) { }
