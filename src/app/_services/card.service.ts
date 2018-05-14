@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Card } from '../_models/card';
+import { Card } from '../_models/model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
 import { catchError, map, tap } from 'rxjs/operators';

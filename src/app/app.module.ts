@@ -2,11 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { RouterModule, Routes, CanActivate } from '@angular/router';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 //components
 import { AppComponent } from './app.component';
-import { Board Component } from './board/board.component';
+import { BoardComponent } from './board/board.component';
 import { CardComponent } from './card/card.component';
 import { ListComponent } from './list/list.component';
 
@@ -18,10 +19,10 @@ import { BoardListComponent } from './board-list/board-list.component';
 
 
 const appRoutes: Routes = [
-  { path: 'boards', component: BoardsComponent},
-  { path: '/', component: BoardListComponent},
+  { path: 'board/:id', component: BoardComponent},
+  { path: '', component: BoardListComponent},
   { path: '**',
-    redirectTo: '/board-list',
+    redirectTo: 'board-list',
     pathMatch: 'full'
   }
 ];
@@ -37,6 +38,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(
     appRoutes,
     { enableTracing: true } // <-- debugging purposes only

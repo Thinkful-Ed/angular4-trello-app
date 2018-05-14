@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { List } from '../_models/list';
+import { List } from '../_models/model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -15,6 +15,10 @@ export class ListService {
   constructor(private http: HttpClient) {  }
   getLists():  Observable<List[]>  {
     return this.http.get<List[]>(this.notesUrl);
+  }
+
+  getListById(id):  Observable<List>  {
+    return this.http.get<List>(this.notesUrl + '/' + id);
   }
 
   addList (list: List): Observable<List> {

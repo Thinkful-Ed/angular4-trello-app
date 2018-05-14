@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Board } from '../_models/board';
+import { Board } from '../_models/model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -11,12 +11,16 @@ const httpOptions = {
 
 @Injectable()
 export class BoardService {
-  boardsUrl = "http://localhost:8080/api/boards";
+  boardsUrl = "http://localhost:8080/api/board";
   constructor(private http: HttpClient) {  }
   getBoards():  Observable<Board[]>  {
     return this.http.get<Board[]>(this.boardsUrl);
   }
-  
+
+  getBoardById(id):  Observable<Board>  {
+    return this.http.get<Board>(this.boardsUrl + '/' + id);
+  }
+
   addBoard (board: Board): Observable<Board> {
   return this.http.post<Board>(this.boardsUrl, board, httpOptions).pipe(
     tap((board: Board) => console.log(`added board w/ id=${board.id}`))

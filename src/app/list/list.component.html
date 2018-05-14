@@ -1,3 +1,10 @@
-<p>
-  list works!
-</p>
+
+<div>
+  <h3>{{list.title}}</h3>
+  <ul>
+    <li *ngFor="let card of cards">
+      <app-card [card]="card"></app-card>
+    </li>
+  </ul>
+
+</div>
