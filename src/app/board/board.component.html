@@ -2,7 +2,7 @@
 
 <ul>
   <li>
-      <form #listForm="ngForm" id="board-edit-form" (ngSubmit)="submitForm(boardForm)">
+      <form #listForm="ngForm" id="list-edit-form" (ngSubmit)="submitForm(listForm)">
       New List:<input [(ngModel)]="list.title" placeholder="title" name="title" #title="ngModel" required/>
       <button type="submit" [disabled]="!listForm.form.valid">save</button>
       </form>

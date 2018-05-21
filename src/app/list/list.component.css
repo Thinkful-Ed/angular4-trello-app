@@ -12,6 +12,14 @@ li {
   padding: 10px;
 }
 
+li.new_card {
+  height: 50px;
+}
+
 ul {
   padding: 0;
+}
+
+button {
+  float: right;
 }

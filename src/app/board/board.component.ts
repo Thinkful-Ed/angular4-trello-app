@@ -4,6 +4,7 @@ import { List } from '../_models/model';
 import { Card } from '../_models/model';
 import { Routes, ActivatedRoute } from '@angular/router';
 import { BoardService } from '../_services/board.service';
+import { ListService } from '../_services/list.service';
 
 @Component({
   selector: 'app-board',
@@ -15,7 +16,7 @@ export class BoardComponent implements OnInit {
   list = new List();
   lists: List[];
 
-  constructor(private route: ActivatedRoute, private boardService: BoardService) { }
+  constructor(private route: ActivatedRoute, private boardService: BoardService, private listService: ListService) { }
 
   ngOnInit(){
      this.route.params.subscribe(params => {
@@ -26,5 +27,14 @@ export class BoardComponent implements OnInit {
        this.lists = board['lists'];
       });
    });
+  }
+  submitForm = (listForm) => {
+    let new_list = new List();
+    new_list.title = listForm.form.value.title;
+    console.log(new_list, this.board);
+    this.listService.addList(new_list as List, this.board)
+    .subscribe(board => {
+      this.lists.push(new_list);
+    });
   }
 }

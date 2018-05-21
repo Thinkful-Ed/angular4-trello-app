@@ -15,6 +15,7 @@ import { ListComponent } from './list/list.component';
 import { BoardService } from './_services/board.service';
 import { ListService } from './_services/list.service';
 import { CardService } from './_services/card.service';
+import { BaseService } from './_services/base.service';
 import { BoardListComponent } from './board-list/board-list.component';
 
 
@@ -48,7 +49,8 @@ const appRoutes: Routes = [
   providers: [
     BoardService,
     CardService,
-    ListService
+    ListService,
+    BaseService
   ],
   bootstrap: [AppComponent]
 })
