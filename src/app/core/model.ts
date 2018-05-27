@@ -1,9 +1,7 @@
-
-
 export class Card {
-        id: number;
-        text: string;
-        }
+  id: number;
+  text: string;
+}
 
 export class List {
   id: number;
@@ -12,7 +10,7 @@ export class List {
 }
 
 export class Board {
-      id: number;
-      name: string;
-      lists: List[];
+  id: number;
+  name: string;
+  lists: List[];
 }

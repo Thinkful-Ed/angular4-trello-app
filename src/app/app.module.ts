@@ -2,55 +2,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { RouterModule, Routes, CanActivate } from '@angular/router';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-
-
-//components
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { BoardComponent } from './board/board.component';
-import { CardComponent } from './card/card.component';
-import { ListComponent } from './list/list.component';
-
-//providers
-import { BoardService } from './_services/board.service';
-import { ListService } from './_services/list.service';
-import { CardService } from './_services/card.service';
-import { BaseService } from './_services/base.service';
-import { BoardListComponent } from './board-list/board-list.component';
-
-
-const appRoutes: Routes = [
-  { path: 'board/:id', component: BoardComponent},
-  { path: '', component: BoardListComponent},
-  { path: '**',
-    redirectTo: 'board-list',
-    pathMatch: 'full'
-  }
-];
+import { BoardModule } from './board/board.module';
+import { ListModule } from './list/list.module';
+import { AppCoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    BoardComponent,
-    CardComponent,
-    ListComponent,
-    BoardListComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule,
     HttpClientModule,
+    RouterModule,
+    BrowserModule,
     FormsModule,
-    ReactiveFormsModule,
-    RouterModule.forRoot(
-    appRoutes,
-    { enableTracing: true } // <-- debugging purposes only
-   ),
+    AppCoreModule,
+    ListModule,
+    BoardModule // Must be tha last because have the wildcard route **
   ],
   providers: [
-    BoardService,
-    CardService,
-    ListService,
-    BaseService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,13 @@
+<ul>
+  <li *ngFor="let board of boards">
+    <span class="title">
+      <a href="/board/{{board.id}}">{{board.name}}</a>
+    </span>
+  </li>
+</ul>
+<h3>Add New Board</h3>
+
+<form #boardForm="ngForm" id="board-edit-form" (ngSubmit)="submitForm(boardForm)">
+  <input [(ngModel)]="board.name" placeholder="name" name="name" #title="ngModel" required/>
+  <button type="submit" [disabled]="!boardForm.form.valid">save</button>
+</form>
