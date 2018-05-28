@@ -11,7 +11,12 @@ export class BoardListComponent implements OnInit {
   submitted = false;
   board = new Board();
   boards: Board[];
+
   constructor(private boardService: BoardService) { }
+
+  ngOnInit() {
+    this.getBoards();
+  }
 
   getBoards(): void {
     this.boardService.getBoards()
@@ -20,19 +25,15 @@ export class BoardListComponent implements OnInit {
       });
   }
 
-  submitForm = (boardForm) => {
+  submitForm(boardForm) {
     this.submitted = true;
     console.log('here is the board', boardForm);
     const new_board = new Board();
-    new_board.name = name;
+    new_board.name = boardForm.value.name;
     this.boardService.addBoard(new_board as Board)
       .subscribe(board => {
         this.boards.push(board);
       });
-  }
-
-  ngOnInit() {
-    this.getBoards();
   }
 
 }

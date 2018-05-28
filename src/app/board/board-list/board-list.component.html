@@ -1,7 +1,7 @@
 <ul>
   <li *ngFor="let board of boards">
     <span class="title">
-      <a href="/board/{{board.id}}">{{board.name}}</a>
+      <a routerLink="/board/{{board.id}}">{{board.name}}</a>
     </span>
   </li>
 </ul>

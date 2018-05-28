@@ -31,7 +31,7 @@ export class ListComponent implements OnInit {
       });
   }
 
-  submitForm = (cardForm) => {
+  submitForm(cardForm) {
     const new_card = new Card();
     new_card.text = cardForm.form.value.text;
     this.cardService.addCard(new_card as Card, this.list)

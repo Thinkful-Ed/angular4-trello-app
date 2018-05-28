@@ -28,13 +28,14 @@ export class BoardComponent implements OnInit {
         });
     });
   }
-  submitForm = (listForm) => {
+
+  submitForm(listForm) {
     const new_list = new List();
     new_list.title = listForm.form.value.title;
     console.log(new_list, this.board);
     this.listService.addList(new_list as List, this.board)
-      .subscribe(board => {
-        this.lists.push(new_list);
+      .subscribe(listAdded => {
+        this.lists.push(listAdded);
       });
   }
 }
