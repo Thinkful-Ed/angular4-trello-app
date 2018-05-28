@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Board, List, Card } from '../core/model';
+import { Board, List, Card } from '../model';
 import { Routes, ActivatedRoute } from '@angular/router';
-import { BoardService } from './board.service';
-import { ListService } from '../list/list.service';
+import { BoardService } from '../board.service';
+import { ListService } from '../list.service';
 
 @Component({
   selector: 'app-board',

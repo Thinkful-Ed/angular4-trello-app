@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { BoardComponent } from './board.component';
-import { BoardListComponent } from './board-list.component';
+import { BoardComponent } from './board/board.component';
+import { BoardListComponent } from './board-list/board-list.component';
 
 export const BoardRoutes: Routes = [
     { path: 'board/:id', component: BoardComponent },

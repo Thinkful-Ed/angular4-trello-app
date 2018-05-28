@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
-import { BoardListComponent } from './board-list.component';
+import { BoardListComponent } from './board-list/board-list.component';
 import { BoardService } from './board.service';
 import { RouterModule } from '@angular/router';
 import { BoardRoutes } from './board.routing';
 import { AppCoreModule } from '../core/core.module';
-import { BoardComponent } from './board.component';
+import { BoardComponent } from './board/board.component';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-import { ListModule } from '../list/list.module';
+import { CardComponent } from './card/card.component';
+import { ListComponent } from './list/list.component';
+import { CardService } from './card.service';
+import { ListService } from './list.service';
 
 
 @NgModule({
@@ -16,18 +19,17 @@ import { ListModule } from '../list/list.module';
     CommonModule,
     HttpModule,
     FormsModule,
-    ListModule,
     RouterModule.forRoot(BoardRoutes)
   ],
   declarations: [
-    BoardListComponent, BoardComponent
+    BoardListComponent, BoardComponent, CardComponent, ListComponent
   ],
   exports: [
-    BoardListComponent, BoardComponent
+    BoardListComponent, BoardComponent, CardComponent, ListComponent
   ],
   entryComponents: [],
   providers: [
-    BoardService
+    BoardService, ListService, CardService
   ]
 })
 export class BoardModule { }

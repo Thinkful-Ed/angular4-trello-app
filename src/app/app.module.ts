@@ -5,7 +5,6 @@ import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BoardModule } from './board/board.module';
-import { ListModule } from './list/list.module';
 import { AppCoreModule } from './core/core.module';
 
 @NgModule({
@@ -18,7 +17,6 @@ import { AppCoreModule } from './core/core.module';
     BrowserModule,
     FormsModule,
     AppCoreModule,
-    ListModule,
     BoardModule // Must be tha last because have the wildcard route **
   ],
   providers: [
