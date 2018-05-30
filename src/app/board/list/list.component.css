@@ -1,7 +1,8 @@
 div {
   width: 200px;
-  height: 350px;
+  min-height: 350px;
   background-color: white;
+  padding: 10px;
 }
 
 li {
