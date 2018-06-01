@@ -6,6 +6,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Production environment
+
+Create an account on Netlify and connect your github repo. To configure do:
+
+* Build command: npm run build
+* Publish directory: dist
+
+One common issue is to not have the file `src/environments/environment.prod.ts` when deploying and this will cause an error. So guaranyee that you have this file created and with variables you need for your app.
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
