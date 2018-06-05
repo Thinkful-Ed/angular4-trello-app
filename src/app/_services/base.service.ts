@@ -6,6 +6,6 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable()
 export class BaseService {
-  baseUrl = "http://localhost:8080/api";
+  baseUrl = "https://silly-poitras-00f141.netlify.com/api";
 
 }
