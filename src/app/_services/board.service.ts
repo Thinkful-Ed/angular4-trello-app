@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Board, List } from '../_models/model';
+import { BaseService } from './base.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -11,8 +12,9 @@ const httpOptions = {
 
 @Injectable()
 export class BoardService {
-  boardsUrl = 'http://localhost:8080/api/board';
-  constructor(private http: HttpClient) {  }
+  constructor(private http: HttpClient, private baseService: BaseService) {  }
+  boardsUrl = this.baseService + '/board';
+
   getBoards():  Observable<Board[]>  {
     return this.http.get<Board[]>(this.boardsUrl);
   }
