@@ -13,7 +13,7 @@ const httpOptions = {
 @Injectable()
 export class BoardService {
   constructor(private http: HttpClient, private baseService: BaseService) {  }
-  boardsUrl = this.baseService + '/board';
+  boardsUrl = this.baseService.baseUrl + '/board';
 
   getBoards():  Observable<Board[]>  {
     return this.http.get<Board[]>(this.boardsUrl);
