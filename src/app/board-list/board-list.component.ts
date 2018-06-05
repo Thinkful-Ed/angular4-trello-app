@@ -23,9 +23,9 @@ export class BoardListComponent implements OnInit {
 
  submitForm = (boardForm) => {
    this.submitted = true;
-   console.log("here is the board", boardForm)
+   console.log("here is the board", boardForm.form.value.name)
    let new_board = new Board();
-   new_board.name = name;
+   new_board.name = boardForm.form.value.name;
    this.boardService.addBoard(new_board as Board)
    .subscribe(board => {
      this.boards.push(board);
