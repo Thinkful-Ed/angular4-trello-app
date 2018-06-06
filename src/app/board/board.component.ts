@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Board } from '../_models/model';
 import { List } from '../_models/model';
-import { Routes, ActivatedRoute } from '@angular/router';
 
 import * as $ from 'jquery';
 
