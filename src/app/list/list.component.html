@@ -2,8 +2,3 @@
   <div class="list-header-target js-editing-target"></div>
   <textarea class="list-header-name mod-list-name js-list-name-input" aria-label="Doing" spellcheck="false" dir="auto" maxlength="512" data-loom-hint-blacklisted="true" style="overflow: hidden; word-wrap: break-word; height: 24px;">{{list.title}}</textarea>
 </div>
-<div class="list-cards">
-  <a *ngFor="let card of cards" class="list-card">
-    <app-card [card]="card"></app-card>
-  </a>
-</div>

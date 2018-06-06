@@ -352,6 +352,7 @@ body {
 .board-header {
   flex: none;
   height: auto;
+  background-color: #4169e1;
   overflow: hidden;
   padding: 8px 4px 8px 8px;
   position: relative;
@@ -433,7 +434,7 @@ body {
 }
 
 .list {
-  background: #e2e4e6;
+  background-color: #e2e4e6;
   border-radius: 3px;
   box-sizing: border-box;
   display: flex;
@@ -441,6 +442,8 @@ body {
   max-height: 100%;
   position: relative;
   white-space: normal;
+  width: 200px;
+  height: 400px;
 }
 
 .list-header.is-menu-shown,
@@ -453,6 +456,9 @@ body {
   padding: 8px 10px;
   position: relative;
   min-height: 18px;
+  width: 200px;
+  background-color: #e2e4e6;
+  height: 400px;
 }
 
 .list-header-target {
