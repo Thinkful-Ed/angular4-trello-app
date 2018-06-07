@@ -8,31 +8,7 @@
       </div>
       <div class="board-canvas">
         <div id="board">
-          <div class="js-list list-wrapper">
-            <div class="list js-list-content">
-              <div class="list-header js-list-header u-clearfix is-menu-shown">
-                <div class="list-header-target js-editing-target"></div>
-                <textarea class="list-header-name mod-list-name js-list-name-input" aria-label="Doing" spellcheck="false" dir="auto" maxlength="512" data-loom-hint-blacklisted="true" style="overflow: hidden; word-wrap: break-word; height: 24px;">New List</textarea>
-              </div>
-              <div class="list-cards">
-                 <form #listForm="ngForm" id="board-edit-form" (ngSubmit)="submitForm(board.id, listForm)">
-                  <div class="card-composer">
-                    <div class="list-card js-composer">
-                      <div class="list-card-details u-clearfix">
-                          <div class="list-card-labels u-clearfix js-list-card-composer-labels"></div>
-                          <textarea class="list-card-composer-textarea js-card-title" dir="auto" [(ngModel)]="list.title" placeholder="Please type new list title here." name="title" #title="ngModel" required data-loom-hint-blacklisted="true" style="overflow: hidden; word-wrap: break-word; resize: none; height: 54px;"></textarea>
-                      </div>
-                    </div>
-                    <div class="cc-controls u-clearfix">
-                      <div class="cc-controls-section">
-                        <input class="primary confirm mod-compact js-add-card" type="submit" value="Add" [disabled]="!listForm.form.valid">
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
+        
           <div *ngFor="let list of lists" class="js-list list-wrapper">
             <div class="list js-list-content">
               <app-list [list]="list"></app-list>
