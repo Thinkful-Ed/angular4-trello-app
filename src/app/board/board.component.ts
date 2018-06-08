@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Board } from '../_models/model';
 import { List } from '../_models/model';
 import { Card } from '../_models/model';
-import { Example } from '../test-data';
+import { BoardService } from '../_services/board.service';
+import { Routes, ActivatedRoute } from '@angular/router';
+
 
 import * as $ from 'jquery';
 
@@ -13,12 +15,17 @@ import * as $ from 'jquery';
 })
 
 export class BoardComponent implements OnInit {
-  board = Example;
-  lists = this.board.lists;
+  board = new Board();
+  lists : List[];
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private boardService : BoardService ) { }
+
 
   ngOnInit() {
+  this.route.params.subscribe(params => {
+    this.board  = this.boardService.getBoardById(params['id'])
+    this.lists = this.board['lists'];
+  });
 
   $('#body').css('background-color', 'rgb(0, 121, 191)');
    console.log($('#body'));
